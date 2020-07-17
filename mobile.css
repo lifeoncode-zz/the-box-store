@@ -136,7 +136,7 @@
     .menu_btn{
         display: block;
         position: absolute;
-        top: 0.8rem;
+        top: 1rem;
         right: 2rem;
         z-index: 3;
         width: 45px;        
