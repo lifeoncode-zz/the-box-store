@@ -1,0 +1,506 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth !important;
+}
+
+:root{
+    --black: rgb(0, 0, 0);
+    --blackish: rgb(68, 68, 68);
+    --white: rgb(255, 255, 255);
+    --whitish: rgb(184, 184, 184);
+    --red: rgb(255, 30, 0);
+    --redish: rgb(255, 0, 0);
+}
+
+
+/* utility */
+.container{
+    width: 70%;
+    margin: 0 auto;
+}
+ul{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+h1{
+    font-size: 2rem;
+}
+h2{
+    font-size: 1.6rem;
+    font-weight: 400;
+}
+h3{
+    font-size: 1.2rem;
+}
+p{
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+img{
+    width: 100%;
+    height: auto;
+}
+.hide{
+    display: none !important;
+}
+.current{
+    background-color: var(--black) !important;
+}
+
+.menu, .menu_btn{
+    display: none;
+}
+
+.overlay{
+    position: absolute;
+    z-index: 3;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--black);
+    opacity: 0.7;
+    transform: scale(0);
+    transition: all 0.3s ease;
+}
+
+/* body */
+body{
+    font-family: 'roboto condensed', 'open sans condensed';
+    position: relative;
+}
+
+/* header */
+header{
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 4;
+    padding: 0.5rem 0;
+    background-color: var(--white);
+    box-shadow: 0 0  4px var(--whitish);
+}
+
+header .container{
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+}
+
+header .logo h1{
+    display: inline-block;
+    border-top: 2px solid var(--black);
+    border-bottom: 2px solid var(--black);
+    font-size: 1.6rem;
+    color: var(--black);
+    padding: 5px 0;
+}
+
+.logo h1 span{
+    padding: 4px;
+    background-color: var(--black);
+    color: #fff;
+    margin-left: 2px;
+}
+
+header nav{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+nav li{
+    display: inline;
+    padding: 0 2rem;
+}
+
+nav li a{
+    font-size: 0.8rem;
+    cursor: pointer;
+    color: var(--black);
+    opacity: 0.6;
+    transition: all 0.3s ease;
+}
+nav li a:hover{
+    opacity: 1;
+}
+nav li a:active{
+    opacity: 1;
+}
+
+
+/* showcase */
+.showcase{
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    background: url(./img/showcase-desk.jpg)no-repeat 0 0/cover;
+    position: relative;
+}
+
+.showcase::after{
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: '';
+    width: 100%;
+    height: 100%;
+    background-color: var(--black);
+    opacity: 0.75;
+}
+
+.showcase_inner{
+    position: relative;
+    z-index: 2;
+    margin-top: 10rem;
+}
+
+.showcase_inner h2{
+    color: var(--white);
+}
+
+.showcase_inner p{
+    color: var(--white);
+    margin: 1rem 0;
+}
+
+.showcase_inner a{
+    display: inline-block;
+    background-color: var(--red);
+    color: var(--white);
+    padding: 1rem 2rem;
+    margin-top: 2rem;
+    font-size: 0.8rem;
+    transition: all 0.3s ease;
+}
+.showcase_inner a:hover{
+    transform: scale(1.2);
+    background-color: var(--redish);
+}
+
+
+/* shop section */
+.shop{
+    padding: 4rem 0;
+    text-align: center;
+}
+
+.shop h2{
+    color: var(--black);
+    margin-bottom: 1rem;
+}
+
+.shop_inner{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 2rem;
+}
+
+.shop_inner .product{
+    background-color: var(--white);
+    border-radius: 10px;
+    padding-bottom: 1rem;
+    transition: all 0.3s ease;
+}
+.shop_inner .product:hover{
+    box-shadow: 0 3px 8px var(--whitish);
+}
+
+.product img{
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+.product img:hover{
+    transform: scale(1.05);
+}
+
+/* product name, price and buy button */
+.name{
+    display: block;
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    color: var(--blackish);
+    font-weight: bold;
+}
+
+.detail{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.detail .price{
+    font-weight: bold;
+    color: var(--black);
+    font-size: 1rem;
+}
+
+.detail .buy{
+    color: var(--white);
+    background-color: var(--red);
+    border: 1px solid var(--red);
+    padding: 0.4rem 1.5rem;
+    cursor: pointer;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+.detail .buy:hover{
+    background-color: transparent;
+    color: var(--red);
+}
+
+
+
+
+/* product information */
+.product_info{
+    position: sticky;
+    top: 10%;
+    left: 20%;
+    z-index: 4;
+    width: 60%;
+    margin: 0 auto;
+    background-color: var(--white);
+    border-radius: 0.5rem;
+    box-shadow: 2px 4px 10px var(--black);
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    transform: scale(0);
+    padding: 1rem 0;
+    transition: all 0.3s ease;
+}
+
+
+/* product image viewing */
+.btns{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.btns .escape{
+    position: absolute;
+    left: 16px;
+    top: -12px;
+    font-size: 1.5rem;
+    color: var(--black);
+    cursor: pointer;
+}
+
+.btns div{
+    height: 10px;
+    width: 10px;
+    border-radius: 50%;
+    background-color: var(--whitish);
+    margin: 0 5px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+.btns div:hover{
+    background-color: var(--black);
+}
+
+
+/* text */
+.product_info .text{
+    padding: 2rem;
+    align-self: center;
+}
+
+.text .name, .text p, .text .price{
+    margin-bottom: 1rem;
+}
+
+.text p{
+    color: var(--blackish);
+}
+
+.text .price{
+    display: inline-block;
+    font-size: 1rem;
+    font-weight: bold;
+    color: var(--black);
+}
+
+.text button{
+    display: block;
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid var(--red);
+    color: var(--red);
+    font-size: 0.9rem;
+    font-weight: bold;
+    background-color: transparent;
+    border-radius: 2px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.text button:hover{
+    background-color: var(--red);
+    color: var(--white);
+}
+
+
+
+
+
+
+/* main gallery */
+.main_gallery{
+    padding: 4rem 0;
+}
+
+.main_gallery .about{
+    padding: 2rem 4rem;
+}
+
+.main_gallery .about span{
+    color: var(--red);
+    font-size: 1.1rem;
+    font-family: fantasy;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* men page */
+.men.showcase{
+    background: url(./img/EVO_LITE_RECYCLE_WP_DESKTOP.jpg)no-repeat right 0/cover;
+}
+
+
+
+
+
+
+
+
+
+/* women page */
+.women.showcase{
+    background: url(./img/AW20-DESKTOP.jpg)no-repeat center 0/cover;
+}
+
+
+
+
+
+
+
+/* men-women utility */
+.men_gallery, .women_gallery{
+    padding: 4rem 0;
+}
+
+.gallery_images{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 4px;
+    padding: 0 4rem;
+}
+
+
+/* gallery images are contained in divs that keep changing --- 1 to 5 */
+.gallery_images > div:nth-of-type(2),
+.gallery_images.second > div:nth-of-type(1){
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 4px;
+}
+
+.gallery_images div,
+.gallery_images img{
+    transition: all 0.3s ease;
+}
+
+.gallery_images.second > div + div{
+    display: block;
+}
+
+.gallery_images.line{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 5px;
+}
+
+
+/* about the campaign */
+.main_gallery .about, .men_gallery .about, .women_gallery .about{
+    padding: 2rem 4rem;
+}
+
+.men_gallery .about span, .women_gallery .about span{
+    color: var(--red);
+    font-size: 1.1rem;
+    font-family: fantasy;
+}
+
+.about button{
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    border: 1px solid var(--black);
+    color: var(--black);
+    background-color: transparent;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+.about button:hover{
+    background-color: var(--black);
+    color: var(--white);
+}
+
+
+
+/* footer section */
+footer{
+    padding: 4rem;
+    background-color: var(--black);
+}
+
+.footer_inner{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    text-align: center;
+    grid-gap: 2rem;
+}
+
+.footer_inner p{
+    color: var(--whitish);
+    font-size: 0.8rem;
+}
+
+.footer_inner li{
+    display: inline;
+    padding: 0 1rem;
+}
+
+.footer_inner li a{
+    font-size: 0.8rem;
+    color: var(--blackish);
+}
+.footer_inner li a:hover{
+    color: var(--white);
+    text-decoration: underline;
+}

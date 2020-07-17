@@ -1,0 +1,265 @@
+
+@media screen and (max-width: 1300px){
+    .showcase{
+        height: 60vh;
+    }
+}
+
+
+
+
+
+@media screen and (max-width: 1000px){
+    /* utility */
+    h1{
+        font-size: 1.6rem;
+    }
+    h2{
+        font-size: 1.4rem;
+    }
+    h3{
+        font-size: 1.1rem;
+    }
+    p{
+        font-size: 0.9rem;
+    }
+
+
+    .showcase{
+        background: url(./img/showcase-mobile.jpg)no-repeat center center/cover;
+    }
+
+    .shop_inner.container{
+        width: 80%;
+    }
+
+    .product_info{
+        left: 15%;
+        width: 70%;
+    }
+
+    .gallery_images{
+        padding: 0;
+    }
+    .main_gallery .about, .men_gallery .about, .women_gallery .about{
+        padding: 2rem 0;
+    }
+    
+    /* men page */
+    .men.showcase{
+        background: url(./img/EVO_LITE_RECYCLE_WP_MOBILE.jpg)no-repeat center center/cover;
+    }
+
+
+    /* women page */
+    .women.showcase{
+        background: url(./img/AW20-MOBILE.jpg)no-repeat center bottom/cover;
+    }
+
+    .footer_inner{
+        display: flex;
+        flex-direction: column-reverse;
+    }    
+}
+
+
+
+
+@media screen and (max-width: 765px){
+    .container{
+        width: 80%;
+    }
+    .shop_inner.container{
+        width: 90%;
+    }
+    .product_info{
+        width: 80%;
+        left: 10%;
+    }
+    .text{
+        padding: 0.5rem;
+    }
+}
+
+
+
+
+
+@media screen and (max-width: 690px){
+    .shop_inner{
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .product_info{
+        width: 90%;
+        left: 5%;
+    }
+}
+
+
+
+
+@media screen and (max-width: 550px){
+    /* utility */
+    h1{
+        font-size: 1.2rem !important;
+    }
+    h2{
+        font-size: 1.1rem;
+    }
+    h3{
+        font-size: 1rem;
+    }
+    p{
+        font-size: 0.8rem;
+    }
+    
+    
+    header nav{
+        display: none;
+    }
+
+    header .logo h1{
+        border-top: 1px solid var(--black);
+        border-bottom: 1px solid var(--black);
+        padding: 4px 0;
+    }
+    header .logo span{
+        padding: 2px 0;
+    }
+    
+    .menu_btn{
+        display: block;
+        position: absolute;
+        top: 1.5rem;
+        right: 2rem;
+        z-index: 3;
+        width: 50px;        
+        height: 20px;
+        cursor: pointer;
+    }
+    .menu_btn > div{
+        width: 100%;
+        height: 3px;
+        background-color: var(--blackish);
+        margin-bottom: 10px;
+        border-radius: 1rem;
+        transition: all 0.3s ease;
+    }
+    .menu_btn > div + div{
+        margin: 0;
+        height: 4px;
+    }
+
+    .menu{
+        display: block;
+        transform: scale(0);
+        background-color: var(--white);
+        position: fixed;
+        z-index: 4;
+        top: 20%;
+        left: 15%;
+        width: 60%;
+        padding: 2rem 1rem;
+        text-align: center;
+        border-radius: 5px;
+        transition: all 0.3s ease;
+    }
+    .menu li{
+        padding: 2rem 0;
+    }
+    .menu li a{
+        font-size: 0.9rem;
+        color: var(--blackish)
+    }
+    
+    .product_info{
+        grid-template-columns: none;
+    }
+
+    .btns .escape{
+        left: 32px;
+    }
+    
+    .text .name{
+        margin: 0 0 0.5rem 0;
+    }
+
+    .showcase_inner{
+        margin-top: 8rem;
+    }
+
+    
+    .main_gallery,
+    .women_gallery,
+    .men_gallery{
+        /* display: none; */
+    }
+
+
+}
+
+
+
+
+
+
+
+
+@media screen and (max-width: 530px){
+
+
+    .product_info{
+        top: 2%;
+        padding: 0;
+        width: 95%;
+        left: 2.5%;
+    }
+    
+    .showcase_inner a{
+        margin-top: 1rem;
+    }
+    
+    .shop_inner{
+        grid-template-columns: none;
+    }
+    .shop_inner .product{
+        border-bottom: 1px solid var(--whitish);
+    }
+
+    .men_profile, .women_profile{
+        display: block;
+        padding: 4rem 0;
+    }
+    
+    .men_profile .about, .women_profile .about{
+        display: none;
+    }
+
+    .footer_inner.container{
+        width: 95%;
+    }
+
+    .footer_inner li{
+        padding: 0 0.5rem;
+    }
+}
+
+
+
+
+
+@media screen and (max-width: 405px){
+    
+    .footer_inner li{
+        display: block;
+        padding: 0.5rem 0;
+    }
+
+    .showcase_inner{
+        margin-top: 6rem;
+    }
+
+    .home_h2{
+        display: none;
+    }
+}
