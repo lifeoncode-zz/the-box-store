@@ -244,12 +244,23 @@ nav li a:active{
 
 /* product name, price and buy button */
 .name{
-    display: block;
+    display: inline-block;
     font-size: 1.1rem;
     margin-bottom: 2rem;
     color: var(--blackish);
     font-weight: bold;
     font-family: 'Grenze Gotisch';
+}
+
+.sex{
+    display: inline-block;
+    text-transform: uppercase;
+    margin-left: 0.5rem;
+    font-size: 0.8rem;
+    padding: 5px;
+    border-radius: 2px;
+    background-color: var(--blackish);
+    color: var(--white);
 }
 
 .detail{
