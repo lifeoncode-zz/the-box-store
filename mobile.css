@@ -201,7 +201,7 @@
         /* display: none; */
     }
 
-
+    
 }
 
 
@@ -255,6 +255,10 @@
 
 
 @media screen and (max-width: 405px){
+
+    .footer_inner ul{
+        margin-bottom: 1rem;
+    }
     
     .footer_inner li{
         display: block;

@@ -26,6 +26,17 @@ window.addEventListener('DOMContentLoaded', function(e){
             info.classList.remove('hide');
             setTimeout(() => {
                 info.style.transform = 'scale(1)';
+
+                // toggle item view on product information
+                const [one, two, three] = [document.querySelector('#one'), document.querySelector('#two'), document.querySelector('#three')];
+                one.classList.add('current');
+                two.classList.remove('current');
+                three.classList.remove('current');
+                
+                one.removeEventListener('click', btnOne);
+                two.addEventListener('click', btnTwo);
+                three.addEventListener('click', btnThree);
+                
             }, 100);
         })
     })
@@ -41,8 +52,38 @@ window.addEventListener('DOMContentLoaded', function(e){
         info.style.transform = 'scale(0)';
         setTimeout(() => {
             info.classList.add('hide');
+            document.querySelector('#one').classList.add('current');
+            document.querySelector('#two').classList.remove('current');
+            document.querySelector('#three').classList.remove('current');
         }, 300)
+
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -96,6 +137,106 @@ window.addEventListener('DOMContentLoaded', function(e){
         a.addEventListener('click', hideMenu);
     })
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    // each btn kills its click event once clicked and waits for the other btns to be clicked to activate itself again
+
+    // btn 1
+    function btnOne(e){
+        one.classList.add('current');
+        two.classList.remove('current');
+        three.classList.remove('current');
+        two.addEventListener('click', btnTwo);
+        three.addEventListener('click', btnThree);
+
+        let src = document.querySelector('.product_info img').getAttribute('src');
+
+        if(src.indexOf('-2.jpg') || src.indexOf('-3.jpg')){
+            src = src.slice(0, -6);
+            src += '.jpg';
+            document.querySelector('.product_info img').setAttribute('src', `${src}`);
+
+        }else if(src.indexOf('-2.jpg') === -1 && src.indexOf('.jpg') || src.indexOf('-3.jpg') === -1 && src.indexOf('.jpg')){
+            one.removeEventListener('click', btnOne);
+            one.addEventListener('click', btnOneReset);
+        }
+        
+        one.removeEventListener('click', btnOne);
+    }
+
+    // btn 2
+    function btnTwo(e){
+        two.classList.add('current');
+        one.classList.remove('current');
+        three.classList.remove('current');
+        one.addEventListener('click', btnOne);
+        three.addEventListener('click', btnThree);
+        
+        let src = document.querySelector('.product_info img').getAttribute('src');
+
+        if(src.indexOf('-3.jpg') === -1 && src.indexOf('.jpg')){
+            src = src.slice(0, -4);
+            src += '-2.jpg';
+            document.querySelector('.product_info img').setAttribute('src', `${src}`);
+            
+        }else if(src.indexOf('-3.jpg')){
+            src = src.slice(0, -5);
+            src += '2.jpg';
+            document.querySelector('.product_info img').setAttribute('src', `${src}`);
+        }
+
+        two.removeEventListener('click', btnTwo);
+
+    }
+
+    // btn 3
+    function btnThree(e){
+        three.classList.add('current');
+        one.classList.remove('current');
+        two.classList.remove('current');
+        one.addEventListener('click', btnOne);
+        two.addEventListener('click', btnTwo);
+        
+        let src = document.querySelector('.product_info img').getAttribute('src');
+
+        if(src.indexOf('-2.jpg') === -1 && src.indexOf('.jpg')){
+            src = src.slice(0, -4);
+            src += '-3.jpg';
+            document.querySelector('.product_info img').setAttribute('src', `${src}`);
+
+        }else if(src.indexOf('-2.jpg')){
+            src = src.slice(0, -5);
+            src += '3.jpg';
+            document.querySelector('.product_info img').setAttribute('src', `${src}`);
+        }   
+
+        three.removeEventListener('click', btnThree);
+    }
 
 
 })
