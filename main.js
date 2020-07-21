@@ -62,7 +62,10 @@ window.addEventListener('DOMContentLoaded', function(e){
 
 
 
-
+    // purchasing
+    document.querySelector('.product_info button').addEventListener('click', (e) => {
+        window.open('https://wa.me/message/C5IISRFH3CJVM1');
+    })
 
 
 

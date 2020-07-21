@@ -277,6 +277,7 @@ nav li a:active{
 }
 
 .detail .buy{
+    display: inline-block;
     color: var(--white);
     background-color: var(--red);
     border: 1px solid var(--red);
