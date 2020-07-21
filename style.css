@@ -46,6 +46,7 @@ h2{
 }
 h3{
     font-size: 1.2rem;
+    font-weight: 400;
 }
 p{
     font-size: 0.9rem;
@@ -491,6 +492,71 @@ nav li a:active{
     font-size: 1.1rem;
     font-family: 'Grenze Gotisch';
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* help page */
+.faq.container{
+    padding: 6rem 0 4rem 0;
+}
+
+.faq.container h2{
+    margin-bottom: 1rem;
+}
+
+.faq.container a{
+    color: var(--red);
+    text-decoration: underline;
+}
+
+.question{
+    margin: 1rem 0;
+    box-shadow: 0 0 1px var(--black);
+}
+
+.question h3{
+    display: inline-block;
+    padding: 1rem;
+    background: linear-gradient(to right, #e9e9e9, #efefef, #fff);
+}
+
+.question p{
+    padding: 1rem;
+}
+
+
+
+
+/* terms */
+.terms{
+    padding: 4rem 0;
+}
+
+.terms h2{
+    margin-bottom: 1rem;
+}
+
+.terms ul{
+    list-style: circle;
+}
+
+.terms li{
+    font-size: 0.9rem;
+    margin: 0.5rem 0;
+}
+
+
 
 
 
