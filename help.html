@@ -101,6 +101,57 @@
     </footer>
     
 
-    <script src="./main.js" defer></script>
+    <script defer>
+        // hamburger menu
+    const btn = document.querySelector('.menu_btn');
+    const menu = document.querySelector('.menu');
+    const overlay = document.querySelector('.overlay');
+    btn.addEventListener('click', showMenu);
+
+    function showMenu(e){
+        // animate the btn
+        btn.firstElementChild.style.transform = 'rotate(-25deg)';
+        btn.firstElementChild.style.marginLeft = '5px';
+        btn.lastElementChild.style.transform = 'rotate(-25deg)';
+        btn.lastElementChild.style.marginLeft = '-5px';
+
+        // show menu div
+        overlay.style.transform = 'scale(1)';
+        setTimeout(() => {
+            menu.style.transform = 'scale(1)';
+        }, 50)
+        
+        setTimeout(() => {
+            btn.removeEventListener('click', showMenu);
+            btn.addEventListener('click', hideMenu);
+        }, 350);
+    }
+
+    function hideMenu(e){
+        // animate the btn
+        btn.firstElementChild.style.transform = 'rotate(0deg)';
+        btn.firstElementChild.style.marginLeft = '0';
+        btn.lastElementChild.style.transform = 'rotate(0deg)';
+        btn.lastElementChild.style.marginLeft = '0';
+        
+        // show menu div
+        overlay.style.transform = 'scale(0)';
+        setTimeout(() => {
+            menu.style.transform = 'scale(0)';
+        }, 50)
+        
+        setTimeout(() => {
+            btn.removeEventListener('click', hideMenu);
+            btn.addEventListener('click', showMenu);
+        }, 350);
+    }
+    
+    // if menu links are clicked
+    document.querySelectorAll('.menu a').forEach(a => {
+        a.addEventListener('click', hideMenu);
+    })
+
+
+    </script>
 </body>
 </html>
